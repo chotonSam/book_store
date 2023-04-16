@@ -2,7 +2,7 @@ import { add } from "../actions";
 
 const addBooks = (bookData) => {
   return async (dispatch) => {
-    const response = await fetch("http://localhost:9000/books", {
+    const response = await fetch("https://book-store-json-server-pt5z.onrender.com/books", {
       method: "POST",
       body: JSON.stringify(bookData),
       headers: {

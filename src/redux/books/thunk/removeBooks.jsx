@@ -2,7 +2,7 @@ import { remove } from "../actions";
 
 const removeBooks = (bookId) => {
   return async (dispatch) => {
-    await fetch(`http://localhost:9000/books/${bookId}`, {
+    await fetch(`https://book-store-json-server-pt5z.onrender.com/books/${bookId}`, {
       method: "DELETE",
     });
 
