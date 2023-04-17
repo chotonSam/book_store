@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import logoImg from "../assets/images/logo.svg";
 import { searchFilter } from "../redux/filters/actions";
 
 const Header = () => {
@@ -19,7 +18,10 @@ const Header = () => {
   return (
     <nav className="py-4 2xl:px-6">
       <div className="container flex items-center justify-between">
-        <img src={logoImg} width="150px" className="object-contain" />
+        <div className="logo">
+          <span className="logo-left">hypeb</span>
+          <span className="logo-right">ooks</span>
+        </div>
 
         <ul className="hidden md:flex items-center space-x-6">
           <li className="font-semibold cursor-pointer">Book Store</li>
