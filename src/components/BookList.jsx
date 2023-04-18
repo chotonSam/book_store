@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import loading from "../assets/images/load.png";
 import fetchBooks from "../redux/books/thunk/fetchBooks";
 import { statusChange } from "../redux/filters/actions";
 import Book from "./Book";
@@ -7,6 +8,7 @@ import Book from "./Book";
 const BookList = () => {
   const books = useSelector((state) => state.books);
   const filters = useSelector((state) => state.filters);
+  console.log(books.length);
 
   const { status, search } = filters;
 
@@ -62,16 +64,23 @@ const BookList = () => {
           </button>
         </div>
       </div>
-      <div className="bookContainer">
-        {books
 
-          .filter(filterByStatus)
-          .filter(filterBySearch)
+      {books.length > 0 ? (
+        <div className="bookContainer">
+          {books
 
-          .map((book) => (
-            <Book key={book.id} book={book} books={books} />
-          ))}
-      </div>
+            .filter(filterByStatus)
+            .filter(filterBySearch)
+
+            .map((book) => (
+              <Book key={book.id} book={book} books={books} />
+            ))}
+        </div>
+      ) : (
+        <div className="load">
+          <img src={loading} alt="loading" />
+        </div>
+      )}
     </div>
   );
 };
