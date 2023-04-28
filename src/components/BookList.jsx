@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import loading from "../assets/images/load.png";
-import fetchBooks from "../redux/books/thunk/fetchBooks";
+
 import { statusChange } from "../redux/filters/actions";
 import Book from "./Book";
 
@@ -13,10 +13,6 @@ const BookList = () => {
   const { status, search } = filters;
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchBooks);
-  }, [dispatch]);
 
   const statusHandler = (val) => {
     dispatch(statusChange(val));

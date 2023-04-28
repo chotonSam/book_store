@@ -1,4 +1,4 @@
-import { ADD, EDIT, LOADED, REMOVE } from "./actionTypes";
+import { ADD, EDIT, REMOVE } from "./actionTypes";
 import initialState from "./initialState";
 
 const nextTodoId = (todos) => {
@@ -8,9 +8,6 @@ const nextTodoId = (todos) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOADED:
-      return action.payload;
-
     case ADD:
       return [
         ...state,

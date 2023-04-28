@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
 import formContext from "../contexts/formContext";
-import removeBooks from "../redux/books/thunk/removeBooks";
+import { remove } from "../redux/books/actions";
 import Star from "./Star";
 
 const Book = ({ book, books }) => {
@@ -28,7 +28,7 @@ const Book = ({ book, books }) => {
   };
 
   const deleteHandler = () => {
-    dispatch(removeBooks(id));
+    dispatch(remove(id));
   };
 
   return (

@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
 import formContext from "../contexts/formContext";
 
-import addBooks from "../redux/books/thunk/addBooks";
-import editBooks from "../redux/books/thunk/editBooks";
+import { add, edit } from "../redux/books/actions";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -32,9 +31,9 @@ const Form = () => {
     SeteditId(null);
 
     if (editId) {
-      dispatch(editBooks(bookData, editId));
+      dispatch(edit(bookData, editId));
     } else {
-      dispatch(addBooks(bookData));
+      dispatch(add(bookData));
     }
     e.preventDefault();
 

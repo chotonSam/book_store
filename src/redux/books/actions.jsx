@@ -1,11 +1,4 @@
-import { ADD, EDIT, LOADED, REMOVE } from "./actionTypes";
-
-export const loaded = (todos) => {
-  return {
-    type: LOADED,
-    payload: todos,
-  };
-};
+import { ADD, EDIT, REMOVE } from "./actionTypes";
 
 export const add = (books) => {
   return {
